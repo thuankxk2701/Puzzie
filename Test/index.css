@@ -1,0 +1,53 @@
+:root {
+  font-size: 4vmin;
+  font-family: sans-serif;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-image: -webkit-linear-gradient(
+    60deg,
+    #0000ffde 0%,
+    #000000bd 50%,
+    #ffc0c0de 100%
+  );
+}
+
+.puzzle .word {
+  display: flex;
+}
+.puzzle .word .letter {
+  width: 2em;
+  height: 2em;
+  margin: 0.05em;
+  background-color: #5e5c5c;
+  color: #0a0909;
+  text-align: center;
+  user-select: none;
+  position: relative;
+  order: 2;
+  right: 50%;
+  border: 1px solid rgba(17, 145, 196, 0.658);
+}
+.puzzle .word .letter:before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+.puzzle .word .letter:last-child {
+  margin-right: auto;
+}
+.puzzle .word .pivot {
+  background-color: yellow;
+}
+.puzzle .word .pivot ~ .letter {
+  left: 50%;
+  order: 1;
+}
+
+/*# sourceMappingURL=index.css.map */

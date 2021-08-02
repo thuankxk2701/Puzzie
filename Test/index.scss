@@ -1,0 +1,48 @@
+$cl-word: rgb(10, 9, 9);
+$backgr1: yellow;
+$backgr2: rgb(94, 92, 92);
+:root {
+  font-size: 4vmin;
+  font-family: sans-serif;
+  height: 100%;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.puzzle {
+  .word {
+    display: flex;
+    .letter {
+      width: 2em;
+      height: 2em;
+      margin: 0.05em;
+      background-color: $backgr2;
+      color: $cl-word;
+      text-align: center;
+      user-select: none;
+      position: relative;
+      order: 2;
+      right: 50%;
+      border: 1px solid rgba(17, 145, 196, 0.658);
+      &:before {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+      }
+      &:last-child {
+        margin-right: auto;
+      }
+    }
+    .pivot {
+      background-color: $backgr1;
+      & ~ .letter {
+        left: 50%;
+        order: 1;
+      }
+    }
+  }
+}
